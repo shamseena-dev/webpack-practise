@@ -157,13 +157,13 @@ title.innerHTML = "Title changed";
 para dont change, so lets coonect second.js now ..how??
 
 
-16.. change entry point from index.js -->> third_depOnSecond.js
+17.. change entry point from index.js -->> third_depOnSecond.js
 ---------------------------------------------
 entry: "./src/app/third_depOnSecond.js",
 -----------------------------------------------
 third_depOnSecond:
 -------------------
-import {text} from './second';
+import {text} from './second'; ===// NB:_import {text} from 'second';--didnt work--ERRORRR
 
 text.innerHTML = "paragraph changed";
 //NB:- not innerHtml, but innerHTML//
@@ -180,3 +180,43 @@ and title unchanged
 
 WEBPACK PRACTISE
 paragraph changed
+
+============commit 4
+=======================================================================================
+
+CSS LOADER
+
+18. renamed app->js folder
+-- added new folder css / style.css- body{color:red}
+(src/css/style.css)
+corrected path names..
+
+
+19. npm install --save-dev style-loader css-loader
+
+20. added to third_depOnSecond.js (which is ENTRY POINT)
+import "../css/style.css";
+
+21. CONFIG --webpack.config.js
+----------------
+module : {
+    rules : [
+     {
+      test: /\.css$/,
+      use : ["style-loader","css-loader"]
+     }
+    ]
+  }
+------------------
+22. npm start===it worked--RED color on webpage-aftr refreshing
+
+23..  F12 -->ELEMENTS->> 
+
+<head>
+
+<style>body{ color: red; }</style >
+
+</head>
+
+
+
