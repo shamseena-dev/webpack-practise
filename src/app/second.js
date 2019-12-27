@@ -1,1 +1,3 @@
-var text = document.getElementById('text');
+export var text = document.getElementById('text');
+
+

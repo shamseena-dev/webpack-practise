@@ -81,21 +81,41 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app/third_depOnSecond.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/app/index.js":
-/*!**************************!*\
-  !*** ./src/app/index.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/app/second.js":
+/*!***************************!*\
+  !*** ./src/app/second.js ***!
+  \***************************/
+/*! exports provided: text */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var title = document.getElementById('title');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "text", function() { return text; });
+var text = document.getElementById('text');
 
-title.innerHTML = "Title changed";
+
+
+
+/***/ }),
+
+/***/ "./src/app/third_depOnSecond.js":
+/*!**************************************!*\
+  !*** ./src/app/third_depOnSecond.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _second__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./second */ "./src/app/second.js");
+
+
+_second__WEBPACK_IMPORTED_MODULE_0__["text"].innerHTML = "paragraph changed";
 //NB:- not innerHtml, but innerHTML//
 
 /***/ })

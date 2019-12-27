@@ -157,3 +157,26 @@ title.innerHTML = "Title changed";
 para dont change, so lets coonect second.js now ..how??
 
 
+16.. change entry point from index.js -->> third_depOnSecond.js
+---------------------------------------------
+entry: "./src/app/third_depOnSecond.js",
+-----------------------------------------------
+third_depOnSecond:
+-------------------
+import {text} from './second';
+
+text.innerHTML = "paragraph changed";
+//NB:- not innerHtml, but innerHTML//
+
+-----------------------------------------
+second.js:
+-------------
+
+export var text = document.getElementById('text');
+
+----------------------------------------------------
+it works... the paragraph changes
+and title unchanged
+
+WEBPACK PRACTISE
+paragraph changed
